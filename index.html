@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Método B3D - Harmonização Orofacial | Dra. Andressa Ballarin</title>
     
+    <!-- CSS CORRIGIDO -->
+    <link rel="stylesheet" href="css/style.css">
+    
     <style>
+        /* CSS de backup caso o externo não carregue */
         :root {
             --coral-primary: #E25042;
             --coral-hover: #e45346;
@@ -27,14 +31,12 @@
             background: var(--off-white-luxury);
         }
 
-        /* LOGO */
         .logo {
             max-width: 200px;
             height: auto;
             margin-bottom: 30px;
         }
 
-        /* DOBRA 1 - HERO */
         .hero {
             background: linear-gradient(135deg, var(--off-white-luxury) 0%, var(--nude-sophisticated) 100%);
             padding: 80px 20px 60px;
@@ -103,7 +105,6 @@
             display: block;
         }
 
-        /* DOBRA 2 - AUTORIDADE */
         .authority {
             padding: 100px 20px;
             background: white;
@@ -170,7 +171,6 @@
             opacity: 0.8;
         }
 
-        /* DOBRA 3 - BIOGRAFIA */
         .bio {
             padding: 100px 20px;
             background: var(--off-white-luxury);
@@ -224,7 +224,6 @@
             margin-top: 30px;
         }
 
-        /* DOBRA 4 - COMUNIDADE */
         .community {
             padding: 100px 20px;
             background: white;
@@ -256,7 +255,6 @@
             transform: scale(1.05);
         }
 
-        /* DOBRA 5 - CTA FINAL */
         .final-cta {
             padding: 120px 20px;
             background: linear-gradient(135deg, var(--coral-primary) 0%, #d14136 100%);
@@ -313,7 +311,6 @@
             box-shadow: 0 15px 40px rgba(255,255,255,0.4);
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-container,
             .bio-container {
@@ -352,7 +349,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <img src="images/B3D - Logo.png" alt="Logo B3D" class="logo">
+                <img src="assets/images/logo-b3d.png" alt="Logo B3D" class="logo">
                 <h1>O futuro da Harmonização Orofacial está em mãos qualificadas</h1>
                 <p class="hero-subtitle">Transforme sua prática com conhecimento de excelência através do Método B3D reconhecido internacionalmente</p>
                 <a href="#comunidade" class="cta-primary">
@@ -360,8 +357,8 @@
                 </a>
             </div>
             <div class="hero-video">
-                <video controls poster="images/Bg Image.jpeg">
-                    <source src="videos/Video Dobra 1.mp4" type="video/mp4">
+                <video controls poster="assets/images/hero-background.jpeg">
+                    <source src="assets/videos/cta-video.mp4" type="video/mp4">
                     Seu navegador não suporta vídeo.
                 </video>
             </div>
@@ -376,22 +373,22 @@
             
             <div class="authority-grid">
                 <div class="authority-card">
-                    <img src="images/Segunda dobra 1.jpeg" alt="Harvard Medical School" class="authority-image">
+                    <img src="assets/images/Segunda dobra 1.jpeg" alt="Harvard Medical School" class="authority-image">
                     <h3>Harvard Medical School</h3>
                     <p>Reconhecimento internacional da técnica B3D</p>
                 </div>
                 <div class="authority-card">
-                    <img src="images/Segunda dobra 2.jpeg" alt="Sorbonne Paris" class="authority-image">
+                    <img src="assets/images/Segunda dobra 2.jpeg" alt="Sorbonne Paris" class="authority-image">
                     <h3>Sorbonne - Paris</h3>
                     <p>Apresentação em universidade de renome mundial</p>
                 </div>
                 <div class="authority-card">
-                    <img src="images/Segunda dobra 3.jpeg" alt="Instituto MARC Florida" class="authority-image">
+                    <img src="assets/images/Segunda dobra 3.jpeg" alt="Instituto MARC Florida" class="authority-image">
                     <h3>Instituto MARC - Florida</h3>
                     <p>Desenvolvimento da técnica B3D</p>
                 </div>
                 <div class="authority-card">
-                    <img src="images/Segunda dobra 4.jpeg" alt="Congressos Internacionais" class="authority-image">
+                    <img src="assets/images/Segunda dobra 4.jpeg" alt="Congressos Internacionais" class="authority-image">
                     <h3>Congressos Internacionais</h3>
                     <p>Palestrante em Itália, Suécia e Canadá</p>
                 </div>
@@ -403,7 +400,7 @@
     <section class="bio">
         <div class="bio-container">
             <div class="bio-image-container">
-                <img src="images/Terceira Dobra (Apresentação).jpeg" alt="Dra. Andressa Ballarin" class="bio-image">
+                <img src="assets/images/Terceira Dobra (Apresentação).jpeg" alt="Dra. Andressa Ballarin" class="bio-image">
             </div>
             <div class="bio-content">
                 <h2>Dra. Andressa Ballarin</h2>
@@ -430,12 +427,12 @@
             <p class="section-subtitle">Juntos, elevamos o padrão da harmonização</p>
             
             <div class="community-gallery">
-                <img src="images/Dobra três 1.jpeg" alt="Workshop B3D" class="community-photo">
-                <img src="images/Dobra três 2.jpeg" alt="Profissionais em treinamento" class="community-photo">
-                <img src="images/Dobra três 3.jpeg" alt="Prática supervisionada" class="community-photo">
-                <img src="images/Dobra três 4.jpeg" alt="Grupo de estudo B3D" class="community-photo">
-                <img src="images/Dobra três 5.jpeg" alt="Certificação B3D" class="community-photo">
-                <img src="images/Dobra três 6.jpeg" alt="Networking profissional" class="community-photo">
+                <img src="assets/images/Dobra três 1.jpeg" alt="Workshop B3D" class="community-photo">
+                <img src="assets/images/Dobra três 2.jpeg" alt="Profissionais em treinamento" class="community-photo">
+                <img src="assets/images/Dobra três 3.jpeg" alt="Prática supervisionada" class="community-photo">
+                <img src="assets/images/Dobra três 4.jpeg" alt="Grupo de estudo B3D" class="community-photo">
+                <img src="assets/images/Dobra três 5.jpeg" alt="Certificação B3D" class="community-photo">
+                <img src="assets/images/Dobra três 6.jpeg" alt="Networking profissional" class="community-photo">
             </div>
         </div>
     </section>
@@ -447,8 +444,8 @@
             <p>Eleve sua carreira, inspire seus pacientes e conquiste seu diferencial</p>
             
             <div class="cta-video">
-                <video controls poster="images/Bg Image.jpeg">
-                    <source src="videos/Video dobra 5.mp4" type="video/mp4">
+                <video controls poster="assets/images/hero-background.jpeg">
+                    <source src="assets/videos/hero-video.mp4" type="video/mp4">
                     Seu navegador não suporta vídeo.
                 </video>
             </div>
