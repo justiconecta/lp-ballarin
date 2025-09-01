@@ -4,181 +4,1028 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO -->
+    <!-- SEO Optimized -->
     <title>Método B3D - Harmonização Orofacial | Dra. Andressa Ballarin</title>
     <meta name="description" content="Aprenda a técnica B3D reconhecida internacionalmente em Harvard, Sorbonne e institutos de renome.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://metodob3d.com.br">
     
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/dobra1.css">
-    <link rel="stylesheet" href="css/dobra2.css">
+    <!-- Schema Markup para Clínica Médica -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Método B3D - Dra. Andressa Ballarin",
+        "description": "Harmonização Orofacial com técnica B3D reconhecida internacionalmente",
+        "url": "https://metodob3d.com.br",
+        "telephone": "+55-11-99999-9999",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR"
+        },
+        "priceRange": "$$$$",
+        "medicalSpecialty": "Harmonização Orofacial"
+    }
+    </script>
     
-    <!-- APENAS ESTILOS CRÍTICOS INLINE - SÓ PARA DOBRA 1 -->
+    <!-- Performance: CSS Crítico Inline -->
     <style>
-        #hero .btn-premium {
-            background: linear-gradient(135deg, #E25042 0%, #f26b5b 100%) !important;
-            color: white !important;
-            text-decoration: none !important;
-            padding: 24px 60px !important;
-            border-radius: 15px !important;
-            font-size: 1.2rem !important;
-            font-weight: 700 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1px !important;
-            display: inline-block !important;
-            box-shadow: 0 10px 30px rgba(226, 80, 66, 0.3) !important;
-            border: none !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
+        :root {
+            --coral-primary: #E25042;
+            --coral-hover: #e45346;
+            --nude-sophisticated: #ded6ca;
+            --off-white-luxury: #F8F5F0;
+            --chocolate-dark: #453D39;
         }
         
-        #hero .btn-premium:hover {
-            background: linear-gradient(135deg, #e45346 0%, #ff6b5a 100%) !important;
-            color: white !important;
-            text-decoration: none !important;
-            transform: translateY(-3px) !important;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        #hero .btn-premium:visited,
-        #hero .btn-premium:link,
-        #hero .btn-premium:active {
-            color: white !important;
-            text-decoration: none !important;
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--chocolate-dark);
+            background: var(--off-white-luxury);
         }
         
-        #hero {
-            background: linear-gradient(rgba(248, 245, 240, 0.75), rgba(248, 245, 240, 0.75)), url('assets/images/hero-background.jpeg') !important;
-            background-size: cover !important;
-            background-position: center !important;
-            background-attachment: fixed !important;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(248, 245, 240, 0.85), rgba(248, 245, 240, 0.85)), url('assets/images/hero-background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .hero-text {
+            margin-bottom: 40px;
+            max-width: 950px;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: var(--chocolate-dark);
+            margin-bottom: 40px;
+            line-height: 1.1;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        
+        .hero-title br {
+            display: block;
+            content: "";
+            line-height: 1.1;
+        }
+        
+        .title-gradient {
+            background: linear-gradient(135deg, var(--coral-primary) 0%, #f26b5b 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            color: var(--chocolate-dark);
+            opacity: 0.9;
+            line-height: 1.5;
+            margin: 0;
+            max-width: 800px;
+        }
+        
+        .hero-subtitle strong {
+            color: var(--coral-primary);
+            font-weight: 600;
+        }
+        
+        .hero-video-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 60px auto 60px;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-video-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        
+        .hero-cta {
+            text-align: center;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.6;
+            z-index: 10;
+        }
+        
+        .scroll-mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid var(--coral-primary);
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .scroll-wheel {
+            width: 4px;
+            height: 8px;
+            background: var(--coral-primary);
+            border-radius: 2px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 2s ease-in-out infinite;
+        }
+        
+        @keyframes scrollWheel {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(-50%) translateY(12px);
+                opacity: 0.3;
+            }
+        }
+        
+        .scroll-text {
+            font-size: 0.85rem;
+            color: var(--coral-primary);
+            font-weight: 500;
         }
     </style>
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" as="image" href="assets/images/hero-background.jpeg">
+    <link rel="preload" as="video" href="assets/videos/hero-video.mp4">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
 </head>
 
 <body>
     <!-- DOBRA 1 - HERO -->
-    <section id="hero" class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    O futuro da <span class="title-gradient">Harmonização Orofacial</span> está em mãos qualificadas
-                </h1>
-                <h2 class="hero-subtitle">
-                    Transforme sua prática com conhecimento de excelência através do <strong>Método B3D</strong> reconhecido internacionalmente
-                </h2>
-            </div>
+            <h1 class="hero-title">
+                O futuro da <span class="title-gradient">Harmonização Orofacial</span> está em mãos qualificadas
+            </h1>
+            <p class="hero-subtitle">
+                Transforme sua prática com conhecimento de excelência através do <strong>Método B3D</strong> reconhecido internacionalmente
+            </p>
             
             <div class="hero-video-container">
-                <video 
-                    id="heroVideo"
-                    class="hero-video" 
-                    poster="assets/images/hero-background.jpeg"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="auto">
+                <video class="hero-video" autoplay muted loop playsinline preload="metadata" 
+                       poster="assets/images/hero-background.jpeg">
                     <source src="assets/videos/hero-video.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
                 </video>
             </div>
             
-            <div class="hero-cta">
-                <a href="#autoridade" class="btn-premium" onclick="trackCTA('hero')">
-                    QUERO DOMINAR O MÉTODO B3D
-                </a>
-            </div>
-        </div>
-
-        <div class="scroll-indicator">
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
-            </div>
-            <span class="scroll-text">Role para descobrir</span>
+            <a href="#biografia" class="btn-premium" onclick="trackCTA('hero')">
+                QUERO DOMINAR O MÉTODO B3D
+            </a>
         </div>
     </section>
 
-    <!-- DOBRA 2 - AUTORIDADE LIMPA -->
-    <section id="autoridade" class="dobra2-clean">
+    <!-- DOBRA 2 - AUTORIDADE -->
+    <section id="autoridade" class="autoridade-section">
         <div class="container">
-            
-            <!-- H1 Centralizado -->
-            <div class="dobra2-header">
-                <span class="dobra2-tag">🏆 Referência Mundial</span>
-                <h1 class="dobra2-title">
+            <div class="autoridade-header">
+                <h2 class="autoridade-title">
                     Aprenda com quem ensina o mundo: a <span class="highlight">Dra. Andressa Ballarin</span> é referência e escolha dos profissionais em <span class="highlight">Harmonização Orofacial</span>
-                </h1>
+                </h2>
             </div>
 
-            <!-- Estatísticas -->
-            <div class="dobra2-stats">
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Anos de Experiência</div>
+            <div class="fotos-grid-large">
+                <div class="foto-item-large">
+                    <div class="foto-container">
+                        <img src="assets/images/Segunda dobra 1.jpeg" alt="Dra. Andressa Ballarin ensinando" loading="lazy" decoding="async">
+                    </div>
+                    <div class="foto-description">
+                        <h3>Educadora Mundial</h3>
+                        <p>Formando profissionais de excelência em congressos internacionais</p>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Profissionais Formados</div>
+                <div class="foto-item-large">
+                    <div class="foto-container">
+                        <img src="assets/images/Segunda dobra 2.jpeg" alt="Dra. Andressa Ballarin em procedimento" loading="lazy" decoding="async">
+                    </div>
+                    <div class="foto-description">
+                        <h3>Prática Clínica</h3>
+                        <p>Aplicação precisa do Método B3D</p>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Países Alcançados</div>
+                <div class="foto-item-large">
+                    <div class="foto-container">
+                        <img src="assets/images/Segunda dobra 3.jpeg" alt="Dra. Andressa Ballarin reconhecimento" loading="lazy" decoding="async">
+                    </div>
+                    <div class="foto-description">
+                        <h3>Reconhecimento</h3>
+                        <p>Premiada por sua contribuição científica</p>
+                    </div>
+                </div>
+                <div class="foto-item-large">
+                    <div class="foto-container">
+                        <img src="assets/images/Segunda dobra 4.jpeg" alt="Dra. Andressa Ballarin inovação" loading="lazy" decoding="async">
+                    </div>
+                    <div class="foto-description">
+                        <h3>Inovação</h3>
+                        <p>Desenvolvendo o futuro da harmonização</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Fotos Lado a Lado -->
-            <div class="dobra2-photos">
-                <div class="photo-item">
-                    <img src="assets/images/Segunda dobra 1.jpeg" alt="Dra. Andressa Ballarin ensinando">
+    <!-- DOBRA 3 - BIOGRAFIA -->
+    <section id="biografia" class="biografia-section">
+        <div class="container">
+            <div class="biografia-content">
+                <div class="biografia-image">
+                    <img src="assets/images/Terceira Dobra.jpeg" alt="Dra. Andressa Ballarin perfil profissional" loading="lazy" decoding="async">
                 </div>
-                <div class="photo-item">
-                    <img src="assets/images/Segunda dobra 2.jpeg" alt="Dra. Andressa Ballarin em procedimento">
-                </div>
-                <div class="photo-item">
-                    <img src="assets/images/Segunda dobra 3.jpeg" alt="Dra. Andressa Ballarin reconhecimento">
-                </div>
-                <div class="photo-item">
-                    <img src="assets/images/Segunda dobra 4.jpeg" alt="Dra. Andressa Ballarin inovação">
+                
+                <div class="biografia-text">
+                    <h2 class="section-title-biografia">
+                        Uma trajetória de <span class="highlight">dedicação e resultados comprovados</span>
+                    </h2>
+                    
+                    <div class="biografia-content-text">
+                        <p>Dra. Andressa Ballarin - Professora Especialista em Harmonização Orofacial, Cirurgiã-dentista, especialista em Dentística com formação também em Oclusão e foco na neurofisiologia facial.</p>
+                        
+                        <p>Desenvolveu no instituto MARC (Florida/USA) o <strong>Protocolo de Escultura Labial Ballarin 3D (B3D)</strong>, técnica única e transformadora. A técnica Ballarin 3D recebeu reconhecimento internacional na Harvard Medical School, Sorbonne (Paris/França), Itália, Suécia e Canada.</p>
+                        
+                        <p class="quote-destacada">"A técnica Ballarin 3D eleva a qualificação do profissional injetor e entrega de um resultado natural e transformador para cada paciente"</p>
+                        
+                        <p class="autor-quote"><strong>Dra. Andressa Ballarin</strong></p>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- DOBRAS 3-5 (placeholders) -->
-    <section id="biografia" class="placeholder">
+    <!-- DOBRA 4 - COMUNIDADE -->
+    <section id="resultados" class="comunidade-section">
         <div class="container">
-            <h2>🚧 Dobra 3 - Biografia Detalhada</h2>
-            <p>Em desenvolvimento...</p>
-        </div>
-    </section>
-    
-    <section id="comunidade" class="placeholder">
-        <div class="container">
-            <h2>🚧 Dobra 4 - Comunidade & Resultados</h2>
-            <p>Em desenvolvimento...</p>
-        </div>
-    </section>
-    
-    <section id="cta-final" class="placeholder">
-        <div class="container">
-            <h2>🚧 Dobra 5 - CTA Final</h2>
-            <p>Em desenvolvimento...</p>
+            <div class="comunidade-header">
+                <h2 class="section-title">
+                    Uma comunidade de especialistas em constante evolução: <span class="highlight">juntos, elevamos o padrão da harmonização</span>
+                </h2>
+            </div>
+            
+            <div class="comunidade-grid">
+                <div class="comunidade-item">
+                    <img src="assets/images/dobraquatro1.jpeg" alt="Profissional especialista" loading="lazy" decoding="async">
+                </div>
+                <div class="comunidade-item">
+                    <img src="assets/images/dobraquatro2.jpeg" alt="Profissional especialista" loading="lazy" decoding="async">
+                </div>
+                <div class="comunidade-item">
+                    <img src="assets/images/dobraquatro3.jpeg" alt="Profissional especialista" loading="lazy" decoding="async">
+                </div>
+                <div class="comunidade-item">
+                    <img src="assets/images/dobraquatro4.jpeg" alt="Profissional especialista" loading="lazy" decoding="async">
+                </div>
+                <div class="comunidade-item">
+                    <img src="assets/images/dobraquatro5.jpeg" alt="Profissional especialista" loading="lazy" decoding="async">
+                </div>
+                <div class="comunidade-item">
+                    <img src="assets/images/dobraquatro6.jpeg" alt="Profissional especialista" loading="lazy" decoding="async">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- JavaScript -->
+    <!-- DOBRA 5 - CTA FINAL -->
+    <section id="inscricao" class="cta-final-section">
+        <div class="container">
+            <div class="cta-final-content">
+                <h2 class="cta-final-title">
+                    Seja parte da transformação: <span class="highlight">eleve sua carreira, inspire seus pacientes e conquiste seu diferencial</span>
+                </h2>
+                
+                <div class="cta-video-container">
+                    <video 
+                        class="cta-video" 
+                        poster="assets/images/hero-background.jpeg"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata">
+                        <source src="assets/videos/Video dobra 5.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeo.
+                    </video>
+                </div>
+                
+                <div class="cta-final-button">
+                    <a href="#inscricao" class="btn-premium" onclick="trackCTA('final_cta')">
+                        QUERO SER B3D
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSS das Novas Dobras -->
+    <style>
+        /* DOBRA 2 - AUTORIDADE */
+        .autoridade-section {
+            background: white;
+            padding: 100px 0;
+        }
+        
+        .autoridade-header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding: 0 20px;
+        }
+        
+        .autoridade-title {
+            font-size: clamp(1.6rem, 3vw, 2.5rem);
+            font-weight: 700;
+            color: var(--chocolate-dark);
+            line-height: 1.3;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: var(--chocolate-dark);
+            line-height: 1.2;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .btn-premium {
+            background: linear-gradient(135deg, var(--coral-primary) 0%, #f26b5b 100%);
+            color: white;
+            padding: 24px 60px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(226, 80, 66, 0.3);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+            outline: none;
+        }
+        
+        .btn-premium:hover {
+            background: linear-gradient(135deg, var(--coral-hover) 0%, #ff6b5a 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(226, 80, 66, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn-premium:visited,
+        .btn-premium:link,
+        .btn-premium:active,
+        .btn-premium:focus {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .highlight {
+            color: var(--coral-primary);
+        }
+        
+        .tag-destaque {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--coral-primary), #f26b5b);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(226, 80, 66, 0.3);
+        }
+        
+        .fotos-grid-large {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin: 0 auto;
+            max-width: 1800px;
+            width: 100%;
+            justify-content: center;
+            padding: 0 40px;
+        }
+        
+        .foto-item-large {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        
+        .foto-item-large:hover {
+            transform: translateY(-10px);
+        }
+        
+        .foto-container {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+            aspect-ratio: 3/4;
+            margin-bottom: 25px;
+            width: 100%;
+            min-height: 400px;
+        }
+        
+        .foto-item-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .foto-description {
+            text-align: center;
+            background: transparent;
+            padding: 0;
+        }
+        
+        .foto-description h3 {
+            color: var(--coral-primary);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .foto-description p {
+            color: var(--chocolate-dark);
+            opacity: 0.85;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin: 0;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        
+        /* DOBRA 3 - BIOGRAFIA */
+        .biografia-section {
+            background: var(--off-white-luxury);
+            padding: 80px 0;
+        }
+        
+        .biografia-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .section-title-biografia {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: var(--chocolate-dark);
+            line-height: 1.2;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .biografia-content-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--chocolate-dark);
+        }
+        
+        .biografia-content-text p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .biografia-content-text strong {
+            color: var(--coral-primary);
+            font-weight: 700;
+        }
+        
+        .quote-destacada {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--coral-primary);
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            padding: 20px;
+            background: rgba(226, 80, 66, 0.05);
+            border-left: 4px solid var(--coral-primary);
+            border-radius: 8px;
+        }
+        
+        .autor-quote {
+            text-align: right;
+            font-size: 1rem;
+            margin-bottom: 0;
+            opacity: 1 !important;
+        }
+        
+        .autor-quote strong {
+            color: var(--chocolate-dark);
+        }
+        
+        .biografia-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .biografia-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .certificacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .cert-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            aspect-ratio: 1;
+        }
+        
+        .cert-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cert-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* DOBRA 4 - COMUNIDADE */
+        .comunidade-section {
+            background: white;
+            padding: 100px 0;
+        }
+        
+        .comunidade-header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding: 0 20px;
+        }
+        
+        .comunidade-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 0 auto;
+            max-width: 1500px;
+            padding: 0 40px;
+        }
+        
+        .comunidade-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            aspect-ratio: 4/3;
+        }
+        
+        .comunidade-item:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+        
+        .comunidade-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* DOBRA 5 - CTA FINAL */
+        .cta-final-section {
+            background: linear-gradient(135deg, var(--coral-primary) 0%, #f26b5b 100%);
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-final-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cta-final-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 60px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-final-title .highlight {
+            color: white;
+        }
+        
+        .cta-video-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-video-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cta-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 20px;
+        }
+        
+        .cta-final-button {
+            text-align: center;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 1024px) {
+            .hero {
+                background-attachment: scroll;
+            }
+            
+            .fotos-grid-large {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+                max-width: 1000px;
+                padding: 0 30px;
+            }
+            
+            .foto-container {
+                min-height: 350px;
+            }
+            
+            .comunidade-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                padding: 0 30px;
+            }
+            
+            .certificacoes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .biografia-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section-title-biografia {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .cta-final-section {
+                padding: 80px 0;
+            }
+            
+            .cta-final-title {
+                margin-bottom: 50px;
+            }
+            
+            .cta-video-container {
+                margin-bottom: 50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                background-attachment: scroll;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+                margin-bottom: 30px;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(1rem, 2vw, 1.2rem);
+            }
+            
+            .hero-text {
+                margin-bottom: 30px;
+            }
+            
+            .btn-premium {
+                padding: 20px 40px;
+                font-size: 1.1rem;
+            }
+            
+            .hero-video-container {
+                margin: 40px auto 40px;
+            }
+            
+            .fotos-grid-large {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                max-width: 700px;
+                padding: 0 25px;
+            }
+            
+            .foto-container {
+                min-height: 300px;
+            }
+            
+            .foto-description h3 {
+                font-size: 1.3rem;
+            }
+            
+            .foto-description p {
+                font-size: 1rem;
+            }
+            
+            .comunidade-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+                padding: 0 25px;
+            }
+            
+            .biografia-content-text {
+                font-size: 1rem;
+            }
+            
+            .quote-destacada {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+            
+            .cta-final-section {
+                padding: 60px 0;
+            }
+            
+            .cta-final-title {
+                margin-bottom: 40px;
+            }
+            
+            .cta-video-container {
+                margin-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: clamp(1.6rem, 3vw, 2.4rem);
+                line-height: 1.2;
+                margin-bottom: 25px;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+            }
+            
+            .hero-text {
+                margin-bottom: 25px;
+            }
+            
+            .btn-premium {
+                padding: 18px 30px;
+                font-size: 1rem;
+            }
+            
+            .hero-video-container {
+                margin: 30px auto 30px;
+            }
+            
+            .fotos-grid-large {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                max-width: 500px;
+                padding: 0 20px;
+            }
+            
+            .foto-container {
+                min-height: 400px;
+            }
+            
+            .foto-description h3 {
+                font-size: 1.4rem;
+            }
+            
+            .foto-description p {
+                font-size: 1.1rem;
+            }
+            
+            .comunidade-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 20px;
+            }
+            
+            .certificacoes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .biografia-content-text {
+                font-size: 0.95rem;
+            }
+            
+            .quote-destacada {
+                font-size: 1rem;
+                padding: 12px;
+            }
+            
+            .cta-final-title {
+                font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            }
+        }
+    </style>
+
+    <!-- JavaScript Otimizado -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('heroVideo');
-            video.play().catch(error => {
-                console.log('Autoplay prevented:', error);
+        // Performance: Lazy Loading Avançado
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
             });
-        });
 
-        function trackCTA(location) {
-            console.log('CTA clicked:', location);
+            // Aplicar aos elementos fora da dobra 1
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
         }
 
+        // Conversion Tracking Avançado
+        function trackCTA(location) {
+            // Google Analytics 4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cta_click', {
+                    'location': location,
+                    'event_category': 'conversion',
+                    'custom_parameter': window.location.pathname
+                });
+            }
+            
+            // Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: location,
+                    content_category: 'cta_click'
+                });
+            }
+            
+            // Console para debug
+            console.log('CTA Tracking:', {
+                location: location,
+                timestamp: new Date().toISOString(),
+                page: window.location.pathname
+            });
+        }
+
+        // Video Performance
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.querySelector('.hero-video');
+            const ctaVideo = document.querySelector('.cta-video');
+            
+            // Hero Video
+            if (heroVideo) {
+                heroVideo.play().catch(error => {
+                    console.log('Hero video autoplay prevented:', error);
+                });
+                
+                // Pause video when out of view para performance
+                const heroVideoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            heroVideo.play();
+                        } else {
+                            heroVideo.pause();
+                        }
+                    });
+                });
+                heroVideoObserver.observe(heroVideo);
+            }
+            
+            // CTA Video
+            if (ctaVideo) {
+                ctaVideo.play().catch(error => {
+                    console.log('CTA video autoplay prevented:', error);
+                });
+                
+                // Pause video when out of view para performance
+                const ctaVideoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            ctaVideo.play();
+                        } else {
+                            ctaVideo.pause();
+                        }
+                    });
+                });
+                ctaVideoObserver.observe(ctaVideo);
+            }
+        });
+
+        // Smooth Scroll Otimizado
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -188,6 +1035,28 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+            });
+        });
+
+        // Analytics de Scroll Depth
+        let scrollDepths = [25, 50, 75, 100];
+        let trackedDepths = [];
+
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            
+            scrollDepths.forEach(depth => {
+                if (scrollPercent >= depth && !trackedDepths.includes(depth)) {
+                    trackedDepths.push(depth);
+                    
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'scroll', {
+                            'event_category': 'engagement',
+                            'event_label': `${depth}% scrolled`,
+                            'non_interaction': true
+                        });
+                    }
                 }
             });
         });
