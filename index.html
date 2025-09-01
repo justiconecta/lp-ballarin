@@ -3,457 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Otimizado -->
     <title>Método B3D - Harmonização Orofacial | Dra. Andressa Ballarin</title>
+    <meta name="description" content="Aprenda a técnica B3D reconhecida internacionalmente em Harvard, Sorbonne e institutos de renome. Capacitação em Harmonização Orofacial de excelência.">
+    <meta name="keywords" content="harmonização orofacial, método b3d, andressa ballarin, preenchimento labial, capacitação odontologia">
+    <meta name="robots" content="index, follow">
     
-    <!-- CSS CORRIGIDO -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Método B3D - Harmonização Orofacial de Excelência">
+    <meta property="og:description" content="Técnica reconhecida internacionalmente - Harvard, Sorbonne, Florida">
+    <meta property="og:image" content="assets/images/hero-background.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
     
-    <style>
-        /* CSS de backup caso o externo não carregue */
-        :root {
-            --coral-primary: #E25042;
-            --coral-hover: #e45346;
-            --nude-sophisticated: #ded6ca;
-            --off-white-luxury: #F4F0E7;
-            --chocolate-dark: #453D39;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--chocolate-dark);
-            background: var(--off-white-luxury);
-        }
-
-        .logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 30px;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--off-white-luxury) 0%, var(--nude-sophisticated) 100%);
-            padding: 80px 20px 60px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: var(--chocolate-dark);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: var(--chocolate-dark);
-            margin-bottom: 40px;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
-
-        .cta-primary {
-            background: var(--coral-primary);
-            color: white;
-            padding: 20px 40px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(226, 80, 66, 0.3);
-        }
-
-        .cta-primary:hover {
-            background: var(--coral-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(226, 80, 66, 0.4);
-        }
-
-        .hero-video {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-
-        .hero-video video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .authority {
-            padding: 100px 20px;
-            background: white;
-        }
-
-        .authority-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            color: var(--chocolate-dark);
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            font-size: 1.4rem;
-            color: var(--chocolate-dark);
-            margin-bottom: 60px;
-            opacity: 0.8;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .authority-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .authority-card {
-            background: var(--off-white-luxury);
-            padding: 40px 30px;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .authority-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .authority-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .authority-card h3 {
-            font-size: 1.4rem;
-            color: var(--coral-primary);
-            margin-bottom: 15px;
-        }
-
-        .authority-card p {
-            color: var(--chocolate-dark);
-            opacity: 0.8;
-        }
-
-        .bio {
-            padding: 100px 20px;
-            background: var(--off-white-luxury);
-        }
-
-        .bio-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .bio-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .bio-content h2 {
-            font-size: 2.5rem;
-            color: var(--coral-primary);
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .bio-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--chocolate-dark);
-            margin-bottom: 30px;
-        }
-
-        .highlight {
-            background: var(--coral-primary);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .bio-quote {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--coral-primary);
-            border-left: 4px solid var(--coral-primary);
-            padding-left: 20px;
-            margin-top: 30px;
-        }
-
-        .community {
-            padding: 100px 20px;
-            background: white;
-        }
-
-        .community-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .community-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .community-photo {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .community-photo:hover {
-            transform: scale(1.05);
-        }
-
-        .final-cta {
-            padding: 120px 20px;
-            background: linear-gradient(135deg, var(--coral-primary) 0%, #d14136 100%);
-            text-align: center;
-            color: white;
-        }
-
-        .final-cta-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .final-cta h2 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .final-cta p {
-            font-size: 1.4rem;
-            margin-bottom: 50px;
-            opacity: 0.95;
-        }
-
-        .cta-video {
-            margin: 40px 0;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .cta-video video {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-        }
-
-        .cta-secondary {
-            background: white;
-            color: var(--coral-primary);
-            padding: 22px 50px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
-        }
-
-        .cta-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255,255,255,0.4);
-        }
-
-        @media (max-width: 768px) {
-            .hero-container,
-            .bio-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .final-cta h2 {
-                font-size: 2.2rem;
-            }
-
-            .bio-image {
-                height: 300px;
-            }
-
-            .authority-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .community-gallery {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo-b3d.png">
+    
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dobra1.css">
+    <!-- Próximas dobras serão adicionadas incrementalmente -->
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Método B3D - Protocolo de Escultura Labial Ballarin 3D",
+      "description": "Capacitação em Harmonização Orofacial com técnica reconhecida internacionalmente",
+      "provider": {
+        "@type": "Person",
+        "name": "Dra. Andressa Ballarin",
+        "jobTitle": "Professora Especialista em Harmonização Orofacial",
+        "description": "Cirurgiã-dentista especialista em Dentística com formação em Oclusão"
+      },
+      "educationalLevel": "Professional",
+      "teaches": "Harmonização Orofacial, Preenchimento Labial, Técnica B3D"
+    }
+    </script>
 </head>
+
 <body>
-    <!-- DOBRA 1 - HERO -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <img src="assets/images/logo-b3d.png" alt="Logo B3D" class="logo">
-                <h1>O futuro da Harmonização Orofacial está em mãos qualificadas</h1>
-                <p class="hero-subtitle">Transforme sua prática com conhecimento de excelência através do Método B3D reconhecido internacionalmente</p>
-                <a href="#comunidade" class="cta-primary">
+    <!-- ======================
+         DOBRA 1 - HERO
+         ====================== -->
+    <section id="hero" class="hero">
+        <!-- Logo - Canto superior esquerdo -->
+        <img src="assets/images/logo-b3d.png" alt="Logo B3D Método Ballarin" class="hero-logo">
+        
+        <!-- Conteúdo centralizado -->
+        <div class="hero-content">
+            <!-- Títulos centralizados -->
+            <div class="hero-text">
+                <h1 class="hero-title">O futuro da Harmonização Orofacial está em mãos qualificadas</h1>
+                <h2 class="hero-subtitle">Transforme sua prática com conhecimento de excelência através do Método B3D reconhecido internacionalmente</h2>
+            </div>
+            
+            <!-- Vídeo grande centralizado -->
+            <div class="hero-video-container">
+                <video 
+                    class="hero-video" 
+                    controls 
+                    poster="assets/images/hero-background.jpeg"
+                    preload="metadata">
+                    <source src="assets/videos/hero-video.mp4" type="video/mp4">
+                    <p>Seu navegador não suporta vídeo HTML5.</p>
+                </video>
+            </div>
+            
+            <!-- CTA centralizado -->
+            <div class="hero-cta">
+                <a href="#autoridade" class="btn-primary" onclick="trackCTA('hero')">
                     QUERO CONHECER O MÉTODO B3D
                 </a>
             </div>
-            <div class="hero-video">
-                <video controls poster="assets/images/hero-background.jpeg">
-                    <source src="assets/videos/cta-video.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeo.
-                </video>
-            </div>
+        </div>
+        
+        <!-- Background overlay para legibilidade -->
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- ======================
+         PRÓXIMAS DOBRAS
+         Serão adicionadas incrementalmente
+         ====================== -->
+    
+    <!-- Placeholder para Dobra 2 - Autoridade -->
+    <section id="autoridade" class="placeholder">
+        <div class="container">
+            <h2>🚧 Dobra 2 - Autoridade</h2>
+            <p>Em desenvolvimento...</p>
+        </div>
+    </section>
+    
+    <!-- Placeholder para Dobra 3 - Biografia -->
+    <section id="biografia" class="placeholder">
+        <div class="container">
+            <h2>🚧 Dobra 3 - Biografia</h2>
+            <p>Em desenvolvimento...</p>
+        </div>
+    </section>
+    
+    <!-- Placeholder para Dobra 4 - Comunidade -->
+    <section id="comunidade" class="placeholder">
+        <div class="container">
+            <h2>🚧 Dobra 4 - Comunidade</h2>
+            <p>Em desenvolvimento...</p>
+        </div>
+    </section>
+    
+    <!-- Placeholder para Dobra 5 - CTA Final -->
+    <section id="cta-final" class="placeholder">
+        <div class="container">
+            <h2>🚧 Dobra 5 - CTA Final</h2>
+            <p>Em desenvolvimento...</p>
         </div>
     </section>
 
-    <!-- DOBRA 2 - AUTORIDADE -->
-    <section class="authority">
-        <div class="authority-container">
-            <h2 class="section-title">Aprenda com quem ensina o mundo</h2>
-            <p class="section-subtitle">A Dra. Andressa Ballarin é referência e escolha dos profissionais em Harmonização Orofacial</p>
+    <!-- ======================
+         JAVASCRIPT MODULAR
+         ====================== -->
+    <script>
+        // Tracking de conversão
+        function trackCTA(location) {
+            // Google Analytics 4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cta_click', {
+                    'location': location,
+                    'event_category': 'conversion',
+                    'method': 'b3d_method'
+                });
+            }
             
-            <div class="authority-grid">
-                <div class="authority-card">
-                    <img src="assets/images/Segunda dobra 1.jpeg" alt="Harvard Medical School" class="authority-image">
-                    <h3>Harvard Medical School</h3>
-                    <p>Reconhecimento internacional da técnica B3D</p>
-                </div>
-                <div class="authority-card">
-                    <img src="assets/images/Segunda dobra 2.jpeg" alt="Sorbonne Paris" class="authority-image">
-                    <h3>Sorbonne - Paris</h3>
-                    <p>Apresentação em universidade de renome mundial</p>
-                </div>
-                <div class="authority-card">
-                    <img src="assets/images/Segunda dobra 3.jpeg" alt="Instituto MARC Florida" class="authority-image">
-                    <h3>Instituto MARC - Florida</h3>
-                    <p>Desenvolvimento da técnica B3D</p>
-                </div>
-                <div class="authority-card">
-                    <img src="assets/images/Segunda dobra 4.jpeg" alt="Congressos Internacionais" class="authority-image">
-                    <h3>Congressos Internacionais</h3>
-                    <p>Palestrante em Itália, Suécia e Canadá</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            // Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'B3D Method - ' + location,
+                    content_category: 'Professional Training'
+                });
+            }
+            
+            // Debug
+            console.log('CTA clicked:', location);
+        }
 
-    <!-- DOBRA 3 - BIOGRAFIA -->
-    <section class="bio">
-        <div class="bio-container">
-            <div class="bio-image-container">
-                <img src="assets/images/Terceira Dobra (Apresentação).jpeg" alt="Dra. Andressa Ballarin" class="bio-image">
-            </div>
-            <div class="bio-content">
-                <h2>Dra. Andressa Ballarin</h2>
-                <p class="bio-text">
-                    <strong>Professora Especialista em Harmonização Orofacial</strong>, Cirurgiã-dentista, especialista em Dentística com formação também em Oclusão e foco na neurofisiologia facial.
-                </p>
-                <p class="bio-text">
-                    Desenvolveu no instituto MARC (Florida/USA) o <span class="highlight">Protocolo de Escultura Labial Ballarin 3D (B3D)</span>, técnica única e transformadora.
-                </p>
-                <p class="bio-text">
-                    A técnica Ballarin 3D recebeu reconhecimento internacional na Harvard Medical School, Sorbonne (Paris/França), Itália, Suécia e Canada.
-                </p>
-                <blockquote class="bio-quote">
-                    "A técnica Ballarin 3D eleva a qualificação do profissional injetor e entrega de um resultado natural e transformador para cada paciente"
-                </blockquote>
-            </div>
-        </div>
-    </section>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    <!-- DOBRA 4 - COMUNIDADE -->
-    <section class="community">
-        <div class="community-container">
-            <h2 class="section-title">Uma comunidade de especialistas em constante evolução</h2>
-            <p class="section-subtitle">Juntos, elevamos o padrão da harmonização</p>
-            
-            <div class="community-gallery">
-                <img src="assets/images/Dobra três 1.jpeg" alt="Workshop B3D" class="community-photo">
-                <img src="assets/images/Dobra três 2.jpeg" alt="Profissionais em treinamento" class="community-photo">
-                <img src="assets/images/Dobra três 3.jpeg" alt="Prática supervisionada" class="community-photo">
-                <img src="assets/images/Dobra três 4.jpeg" alt="Grupo de estudo B3D" class="community-photo">
-                <img src="assets/images/Dobra três 5.jpeg" alt="Certificação B3D" class="community-photo">
-                <img src="assets/images/Dobra três 6.jpeg" alt="Networking profissional" class="community-photo">
-            </div>
-        </div>
-    </section>
+        // Loading states
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy load quando implementar outras dobras
+            console.log('Landing Page B3D - Dobra 1 carregada');
+        });
+    </script>
 
-    <!-- DOBRA 5 - CTA FINAL -->
-    <section class="final-cta" id="comunidade">
-        <div class="final-cta-container">
-            <h2>Seja parte da transformação</h2>
-            <p>Eleve sua carreira, inspire seus pacientes e conquiste seu diferencial</p>
-            
-            <div class="cta-video">
-                <video controls poster="assets/images/hero-background.jpeg">
-                    <source src="assets/videos/hero-video.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeo.
-                </video>
-            </div>
-            
-            <a href="https://wa.me/5511999999999?text=Quero%20ser%20B3D%20-%20Método%20Ballarin" class="cta-secondary">
-                QUERO SER B3D
-            </a>
-        </div>
-    </section>
+    <!-- Analytics Placeholder -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
 </body>
 </html>
