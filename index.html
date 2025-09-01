@@ -4,116 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Otimizado -->
+    <!-- SEO -->
     <title>Método B3D - Harmonização Orofacial | Dra. Andressa Ballarin</title>
-    <meta name="description" content="Aprenda a técnica B3D reconhecida internacionalmente em Harvard, Sorbonne e institutos de renome. Capacitação em Harmonização Orofacial de excelência.">
-    <meta name="keywords" content="harmonização orofacial, método b3d, andressa ballarin, preenchimento labial, capacitação odontologia">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Método B3D - Harmonização Orofacial de Excelência">
-    <meta property="og:description" content="Técnica reconhecida internacionalmente - Harvard, Sorbonne, Florida">
-    <meta property="og:image" content="assets/images/hero-background.jpeg">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo-b3d.png">
+    <meta name="description" content="Aprenda a técnica B3D reconhecida internacionalmente em Harvard, Sorbonne e institutos de renome.">
     
     <!-- CSS Modular -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/dobra1.css">
-    <!-- Próximas dobras serão adicionadas incrementalmente -->
+    <link rel="stylesheet" href="css/dobra2.css">
     
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Método B3D - Protocolo de Escultura Labial Ballarin 3D",
-      "description": "Capacitação em Harmonização Orofacial com técnica reconhecida internacionalmente",
-      "provider": {
-        "@type": "Person",
-        "name": "Dra. Andressa Ballarin",
-        "jobTitle": "Professora Especialista em Harmonização Orofacial",
-        "description": "Cirurgiã-dentista especialista em Dentística com formação em Oclusão"
-      },
-      "educationalLevel": "Professional",
-      "teaches": "Harmonização Orofacial, Preenchimento Labial, Técnica B3D"
-    }
-    </script>
+    <!-- APENAS ESTILOS CRÍTICOS INLINE - SÓ PARA DOBRA 1 -->
+    <style>
+        #hero .btn-premium {
+            background: linear-gradient(135deg, #E25042 0%, #f26b5b 100%) !important;
+            color: white !important;
+            text-decoration: none !important;
+            padding: 24px 60px !important;
+            border-radius: 15px !important;
+            font-size: 1.2rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            display: inline-block !important;
+            box-shadow: 0 10px 30px rgba(226, 80, 66, 0.3) !important;
+            border: none !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        #hero .btn-premium:hover {
+            background: linear-gradient(135deg, #e45346 0%, #ff6b5a 100%) !important;
+            color: white !important;
+            text-decoration: none !important;
+            transform: translateY(-3px) !important;
+        }
+        
+        #hero .btn-premium:visited,
+        #hero .btn-premium:link,
+        #hero .btn-premium:active {
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        #hero {
+            background: linear-gradient(rgba(248, 245, 240, 0.75), rgba(248, 245, 240, 0.75)), url('assets/images/hero-background.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ======================
-         DOBRA 1 - HERO
-         ====================== -->
+    <!-- DOBRA 1 - HERO -->
     <section id="hero" class="hero">
-        <!-- Logo - Canto superior esquerdo -->
-        <img src="assets/images/logo-b3d.png" alt="Logo B3D Método Ballarin" class="hero-logo">
-        
-        <!-- Conteúdo centralizado -->
         <div class="hero-content">
-            <!-- Títulos centralizados -->
             <div class="hero-text">
-                <h1 class="hero-title">O futuro da Harmonização Orofacial está em mãos qualificadas</h1>
-                <h2 class="hero-subtitle">Transforme sua prática com conhecimento de excelência através do Método B3D reconhecido internacionalmente</h2>
+                <h1 class="hero-title">
+                    O futuro da <span class="title-gradient">Harmonização Orofacial</span> está em mãos qualificadas
+                </h1>
+                <h2 class="hero-subtitle">
+                    Transforme sua prática com conhecimento de excelência através do <strong>Método B3D</strong> reconhecido internacionalmente
+                </h2>
             </div>
             
-            <!-- Vídeo grande centralizado -->
             <div class="hero-video-container">
                 <video 
+                    id="heroVideo"
                     class="hero-video" 
-                    controls 
                     poster="assets/images/hero-background.jpeg"
-                    preload="metadata">
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto">
                     <source src="assets/videos/hero-video.mp4" type="video/mp4">
-                    <p>Seu navegador não suporta vídeo HTML5.</p>
                 </video>
             </div>
             
-            <!-- CTA centralizado -->
             <div class="hero-cta">
-                <a href="#autoridade" class="btn-primary" onclick="trackCTA('hero')">
-                    QUERO CONHECER O MÉTODO B3D
+                <a href="#autoridade" class="btn-premium" onclick="trackCTA('hero')">
+                    QUERO DOMINAR O MÉTODO B3D
                 </a>
             </div>
         </div>
-        
-        <!-- Background overlay para legibilidade -->
-        <div class="hero-overlay"></div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Role para descobrir</span>
+        </div>
     </section>
 
-    <!-- ======================
-         PRÓXIMAS DOBRAS
-         Serão adicionadas incrementalmente
-         ====================== -->
-    
-    <!-- Placeholder para Dobra 2 - Autoridade -->
-    <section id="autoridade" class="placeholder">
+    <!-- DOBRA 2 - AUTORIDADE LIMPA -->
+    <section id="autoridade" class="dobra2-clean">
         <div class="container">
-            <h2>🚧 Dobra 2 - Autoridade</h2>
-            <p>Em desenvolvimento...</p>
+            
+            <!-- H1 Centralizado -->
+            <div class="dobra2-header">
+                <span class="dobra2-tag">🏆 Referência Mundial</span>
+                <h1 class="dobra2-title">
+                    Aprenda com quem ensina o mundo: a <span class="highlight">Dra. Andressa Ballarin</span> é referência e escolha dos profissionais em <span class="highlight">Harmonização Orofacial</span>
+                </h1>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="dobra2-stats">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Anos de Experiência</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Profissionais Formados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Países Alcançados</div>
+                </div>
+            </div>
+
+            <!-- Fotos Lado a Lado -->
+            <div class="dobra2-photos">
+                <div class="photo-item">
+                    <img src="assets/images/Segunda dobra 1.jpeg" alt="Dra. Andressa Ballarin ensinando">
+                </div>
+                <div class="photo-item">
+                    <img src="assets/images/Segunda dobra 2.jpeg" alt="Dra. Andressa Ballarin em procedimento">
+                </div>
+                <div class="photo-item">
+                    <img src="assets/images/Segunda dobra 3.jpeg" alt="Dra. Andressa Ballarin reconhecimento">
+                </div>
+                <div class="photo-item">
+                    <img src="assets/images/Segunda dobra 4.jpeg" alt="Dra. Andressa Ballarin inovação">
+                </div>
+            </div>
+
         </div>
     </section>
-    
-    <!-- Placeholder para Dobra 3 - Biografia -->
+
+    <!-- DOBRAS 3-5 (placeholders) -->
     <section id="biografia" class="placeholder">
         <div class="container">
-            <h2>🚧 Dobra 3 - Biografia</h2>
+            <h2>🚧 Dobra 3 - Biografia Detalhada</h2>
             <p>Em desenvolvimento...</p>
         </div>
     </section>
     
-    <!-- Placeholder para Dobra 4 - Comunidade -->
     <section id="comunidade" class="placeholder">
         <div class="container">
-            <h2>🚧 Dobra 4 - Comunidade</h2>
+            <h2>🚧 Dobra 4 - Comunidade & Resultados</h2>
             <p>Em desenvolvimento...</p>
         </div>
     </section>
     
-    <!-- Placeholder para Dobra 5 - CTA Final -->
     <section id="cta-final" class="placeholder">
         <div class="container">
             <h2>🚧 Dobra 5 - CTA Final</h2>
@@ -121,34 +166,19 @@
         </div>
     </section>
 
-    <!-- ======================
-         JAVASCRIPT MODULAR
-         ====================== -->
+    <!-- JavaScript -->
     <script>
-        // Tracking de conversão
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('heroVideo');
+            video.play().catch(error => {
+                console.log('Autoplay prevented:', error);
+            });
+        });
+
         function trackCTA(location) {
-            // Google Analytics 4
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'cta_click', {
-                    'location': location,
-                    'event_category': 'conversion',
-                    'method': 'b3d_method'
-                });
-            }
-            
-            // Facebook Pixel
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead', {
-                    content_name: 'B3D Method - ' + location,
-                    content_category: 'Professional Training'
-                });
-            }
-            
-            // Debug
             console.log('CTA clicked:', location);
         }
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -161,23 +191,6 @@
                 }
             });
         });
-
-        // Loading states
-        document.addEventListener('DOMContentLoaded', function() {
-            // Lazy load quando implementar outras dobras
-            console.log('Landing Page B3D - Dobra 1 carregada');
-        });
     </script>
-
-    <!-- Analytics Placeholder -->
-    <!-- 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    -->
 </body>
 </html>
