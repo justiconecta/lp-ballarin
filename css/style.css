@@ -1,0 +1,339 @@
+:root {
+    --coral-primary: #E25042;
+    --coral-hover: #e45346;
+    --nude-sophisticated: #ded6ca;
+    --off-white-luxury: #F4F0E7;
+    --chocolate-dark: #453D39;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--chocolate-dark);
+    background: var(--off-white-luxury);
+}
+
+/* LOGO */
+.logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+/* DOBRA 1 - HERO */
+.hero {
+    background: linear-gradient(135deg, var(--off-white-luxury) 0%, var(--nude-sophisticated) 100%);
+    padding: 80px 20px 60px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--chocolate-dark);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--chocolate-dark);
+    margin-bottom: 40px;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.cta-primary {
+    background: var(--coral-primary);
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(226, 80, 66, 0.3);
+}
+
+.cta-primary:hover {
+    background: var(--coral-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(226, 80, 66, 0.4);
+}
+
+.hero-video {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.hero-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* DOBRA 2 - AUTORIDADE */
+.authority {
+    padding: 100px 20px;
+    background: white;
+}
+
+.authority-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--chocolate-dark);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    font-size: 1.4rem;
+    color: var(--chocolate-dark);
+    margin-bottom: 60px;
+    opacity: 0.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.authority-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.authority-card {
+    background: var(--off-white-luxury);
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.authority-card:hover {
+    transform: translateY(-10px);
+}
+
+.authority-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.authority-card h3 {
+    font-size: 1.4rem;
+    color: var(--coral-primary);
+    margin-bottom: 15px;
+}
+
+.authority-card p {
+    color: var(--chocolate-dark);
+    opacity: 0.8;
+}
+
+/* DOBRA 3 - BIOGRAFIA */
+.bio {
+    padding: 100px 20px;
+    background: var(--off-white-luxury);
+}
+
+.bio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.bio-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.bio-content h2 {
+    font-size: 2.5rem;
+    color: var(--coral-primary);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.bio-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--chocolate-dark);
+    margin-bottom: 30px;
+}
+
+.highlight {
+    background: var(--coral-primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.bio-quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--coral-primary);
+    border-left: 4px solid var(--coral-primary);
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+/* DOBRA 4 - COMUNIDADE */
+.community {
+    padding: 100px 20px;
+    background: white;
+}
+
+.community-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.community-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.community-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.community-photo:hover {
+    transform: scale(1.05);
+}
+
+/* DOBRA 5 - CTA FINAL */
+.final-cta {
+    padding: 120px 20px;
+    background: linear-gradient(135deg, var(--coral-primary) 0%, #d14136 100%);
+    text-align: center;
+    color: white;
+}
+
+.final-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.final-cta h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.final-cta p {
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+    opacity: 0.95;
+}
+
+.cta-video {
+    margin: 40px 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.cta-video video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.cta-secondary {
+    background: white;
+    color: var(--coral-primary);
+    padding: 22px 50px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+}
+
+.cta-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255,255,255,0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-container,
+    .bio-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .final-cta h2 {
+        font-size: 2.2rem;
+    }
+
+    .bio-image {
+        height: 300px;
+    }
+
+    .authority-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .community-gallery {
+        grid-template-columns: 1fr;
+    }
+}
