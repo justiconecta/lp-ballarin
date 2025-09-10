@@ -1,60 +1,69 @@
 /* ======================
-   BASE.CSS - SEM CONFLITOS
+   BASE.CSS - VARIÁVEIS E RESET
    ====================== */
 
-/* Reset CSS básico */
+:root {
+    --coral-primary: #E25042;
+    --coral-hover: #e45346;
+    --nude-sophisticated: #ded6ca;
+    --off-white-luxury: #F8F5F0;
+    --chocolate-dark: #453D39;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #453D39;
-    background: #F8F5F0;
+    color: var(--chocolate-dark, #453D39);
+    background: var(--off-white-luxury, #F8F5F0);
 }
 
-/* Elementos base - SEM interferir em botões */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-video {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Container padrão */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Placeholders */
-.placeholder {
-    padding: 80px 20px;
-    text-align: center;
-    background: white;
-    border-bottom: 1px solid rgba(222, 214, 202, 0.3);
+.highlight {
+    color: var(--coral-primary, #E25042);
 }
 
-.placeholder h2 {
-    color: #E25042;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 24px;
+.btn-premium {
+    width: 300px !important;
+    height: 56px !important;
+    background: linear-gradient(135deg, #E25042, #e45346) !important;
+    border-radius: 8px !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    letter-spacing: 0.02em !important;
+    color: white !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
 }
 
-.placeholder p {
-    color: #453D39;
-    opacity: 0.7;
+.btn-premium:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 25px 50px rgba(69,61,57,0.25) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btn-premium:visited,
+.btn-premium:link,
+.btn-premium:active,
+.btn-premium:focus {
+    color: white !important;
+    text-decoration: none !important;
 }

@@ -1,0 +1,248 @@
+/* BIOGRAFIA SECTION */
+.biografia-section {
+    background: #F8F5F0;
+    padding: 120px 0;
+    position: relative;
+}
+
+.biografia-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Título da seção */
+.section-title-biografia {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: #453D39;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* Conteúdo de texto */
+.biografia-content-text {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.7;
+    color: #453D39;
+}
+
+.biografia-content-text p {
+    margin-bottom: 24px;
+    opacity: 0.9;
+}
+
+.biografia-content-text strong {
+    color: #E25042;
+    font-weight: 700;
+}
+
+/* Quote destacada simplificada */
+.quote-destacada {
+    font-style: italic;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: #E25042;
+    font-weight: 600;
+    margin: 40px 0 20px 0;
+    padding: 30px;
+    background: rgba(226, 80, 66, 0.05);
+    border-left: 4px solid #E25042;
+    border-radius: 12px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.quote-destacada:hover {
+    transform: translateY(-2px);
+}
+
+.quote-destacada::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    font-size: 3rem;
+    color: #E25042;
+    opacity: 0.2;
+    font-family: Georgia, serif;
+}
+
+.autor-quote {
+    text-align: right;
+    font-size: 1rem;
+    margin-bottom: 0;
+    opacity: 1 !important;
+    font-style: normal;
+}
+
+.autor-quote strong {
+    color: #453D39;
+}
+
+/* Imagem da biografia */
+.biografia-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    position: relative;
+    transition: all 0.4s ease;
+    background: #f0f0f0;
+}
+
+.biografia-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+}
+
+.biografia-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.biografia-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Botão secundário */
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #E25042;
+    color: #E25042;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #E25042;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn-secondary:hover::before {
+    left: 0;
+}
+
+.btn-secondary:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(226, 80, 66, 0.3);
+}
+
+/* Classe highlight reutilizável */
+.highlight {
+    color: #E25042;
+}
+
+/* Animações de entrada */
+.biografia-text {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 0.8s ease 0.2s forwards;
+}
+
+.biografia-image {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideInRight 0.8s ease 0.4s forwards;
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .biografia-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .section-title-biografia {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .biografia-section {
+        padding: 100px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .biografia-section {
+        padding: 80px 0;
+    }
+    
+    .biografia-content {
+        gap: 40px;
+    }
+    
+    .biografia-content-text {
+        font-size: 1rem;
+    }
+    
+    .quote-destacada {
+        font-size: 1.1rem;
+        padding: 20px;
+        margin: 30px 0 15px 0;
+    }
+    
+    .quote-destacada::before {
+        font-size: 2.5rem;
+        top: -8px;
+        left: 20px;
+    }
+    
+    .btn-secondary {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .biografia-content-text {
+        font-size: 0.95rem;
+    }
+    
+    .quote-destacada {
+        font-size: 1rem;
+        padding: 16px;
+    }
+    
+    .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+}

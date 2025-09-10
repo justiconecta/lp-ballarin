@@ -1,6 +1,201 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<style>
+section#hero.hero {
+    position: relative !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* CORREÇÃO PARA REMOVER FAIXAS PRETAS - ABORDAGEM MAIS AGRESSIVA */
+section#hero.hero .hero-video-background {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    z-index: 1 !important;
+    transform: scale(1.1) !important;  /* Força o vídeo a ser 10% maior */
+    filter: none !important;
+}
+
+/* Fallback para vídeos problemáticos */
+section#hero.hero .hero-video-background {
+    min-width: 110% !important;
+    min-height: 110% !important;
+    margin: -5% 0 0 -5% !important;  /* Compensa o scale */
+}
+
+section#hero.hero::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(rgba(69, 61, 57, 0.6), rgba(69, 61, 57, 0.4)) !important;
+    z-index: 2 !important;
+}
+
+/* TEXTO MENOR E UM POUCO MAIS À DIREITA */
+section#hero.hero .hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+    text-align: left !important;
+    max-width: 500px !important;  /* Reduzido ainda mais */
+    width: auto !important;
+    margin: 0 0 80px 80px !important;  /* Mais à direita: 40px → 80px */
+    padding: 0 !important;
+    display: block !important;
+}
+
+section#hero.hero .hero-text {
+    margin-bottom: 40px !important;
+}
+
+/* TÍTULOS MENORES */
+section#hero.hero .hero-title {
+    color: white !important;
+    font-size: clamp(2.2rem, 4vw, 3.6rem) !important;  /* Reduzido de 2.5rem/4.2rem para 2rem/3.2rem */
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    margin-bottom: 20px !important;  /* Reduzido de 24px para 20px */
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+    text-align: left !important;
+}
+
+section#hero.hero .title-gradient {
+    color: #E25042 !important;
+}
+
+section#hero.hero .hero-subtitle {
+    color: white !important;
+    font-size: clamp(1rem, 2vw, 1.3rem) !important;  /* Reduzido de 1.1rem/1.5rem para 1rem/1.3rem */
+    line-height: 1.6 !important;
+    margin-bottom: 30px !important;  /* Reduzido de 40px para 30px */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+    text-align: left !important;
+    max-width: 450px !important;  /* Reduzido de 500px para 450px */
+}
+
+section#hero.hero .hero-subtitle strong {
+    color: #E25042 !important;
+}
+
+section#hero.hero .hero-cta {
+    display: none !important;
+}
+
+/* BOTÃO PEQUENO E CENTRALIZADO (NÃO MAIS FULL-WIDTH) */
+.btn-fixo-bottom {
+    position: fixed !important;
+    bottom: 30px !important;  /* Não mais colado no bottom */
+    left: 50% !important;
+    transform: translateX(-50%) !important;  /* Centralizar */
+    background: linear-gradient(135deg, #E25042 0%, #f26b5b 100%) !important;
+    color: white !important;
+    padding: 18px 40px !important;  /* Padding menor */
+    text-align: center !important;
+    z-index: 9999 !important;
+    box-shadow: 0 8px 25px rgba(226, 80, 66, 0.4) !important;
+    border: none !important;
+    border-radius: 15px !important;  /* Bordas arredondadas */
+    cursor: pointer !important;
+    font-size: 1rem !important;  /* Menor */
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    min-width: 280px !important;  /* Largura específica */
+    width: auto !important;  /* Não mais 100% */
+}
+
+.btn-fixo-bottom:hover {
+    background: linear-gradient(135deg, #e45346 0%, #ff6b5a 100%) !important;
+    color: white !important;
+    text-decoration: none !important;
+    transform: translateX(-50%) translateY(-3px) !important;  /* Hover effect */
+    box-shadow: 0 12px 35px rgba(226, 80, 66, 0.5) !important;
+}
+
+.btn-fixo-bottom:visited,
+.btn-fixo-bottom:link,
+.btn-fixo-bottom:active,
+.btn-fixo-bottom:focus {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* Esconder elementos antigos */
+section#hero.hero .hero-video-container {
+    display: none !important;
+}
+
+section#hero.hero .hero-video {
+    display: none !important;
+}
+
+/* Garantir que body e html não tenham padding/margin */
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Container principal sem padding excessivo */
+section#hero.hero .container {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+    section#hero.hero .hero-content {
+        margin: 0 0 100px 40px !important;  /* Menos margem esquerda no mobile */
+        max-width: calc(100% - 60px) !important;
+    }
+    
+    section#hero.hero .hero-title {
+        font-size: clamp(1.6rem, 3vw, 2.4rem) !important;  /* Ainda menor no mobile */
+    }
+    
+    section#hero.hero .hero-subtitle {
+        font-size: clamp(0.9rem, 1.8vw, 1.1rem) !important;  /* Ainda menor no mobile */
+        max-width: 100% !important;
+    }
+    
+    .btn-fixo-bottom {
+        bottom: 20px !important;
+        padding: 16px 30px !important;
+        font-size: 0.95rem !important;
+        min-width: 250px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    section#hero.hero .hero-content {
+        margin: 0 0 100px 20px !important;  /* Ainda menos margem em telas pequenas */
+        max-width: calc(100% - 40px) !important;
+    }
+    
+    .btn-fixo-bottom {
+        min-width: 220px !important;
+        padding: 14px 25px !important;
+    }
+}
+</style>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -28,11 +223,20 @@
     }
     </script>
     
-    <!-- Performance: CSS Crítico Inline -->
+    <!-- CSS Modular Refatorado -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dobra1.css">
+    <link rel="stylesheet" href="css/dobra2.css">
+    <link rel="stylesheet" href="css/dobra3.css">
+    <link rel="stylesheet" href="css/dobra4.css">
+    <link rel="stylesheet" href="css/dobra5.css">
+    
+    <!-- CSS Crítico Inline (apenas variáveis essenciais) -->
     <style>
         :root {
             --coral-primary: #E25042;
             --coral-hover: #e45346;
+            --coral-light: #f26b5b;
             --nude-sophisticated: #ded6ca;
             --off-white-luxury: #F8F5F0;
             --chocolate-dark: #453D39;
@@ -44,163 +248,27 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: var(--chocolate-dark);
             background: var(--off-white-luxury);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(248, 245, 240, 0.85), rgba(248, 245, 240, 0.85)), url('assets/images/hero-background.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 80px 20px;
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            position: relative;
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .hero-text {
-            margin-bottom: 40px;
-            max-width: 950px;
-            text-align: center;
-        }
-        
-        .hero-title {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 800;
-            color: var(--chocolate-dark);
-            margin-bottom: 40px;
-            line-height: 1.1;
-            white-space: normal;
-            word-wrap: break-word;
-        }
-        
-        .hero-title br {
-            display: block;
-            content: "";
-            line-height: 1.1;
-        }
-        
-        .title-gradient {
-            background: linear-gradient(135deg, var(--coral-primary) 0%, #f26b5b 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-            color: var(--chocolate-dark);
-            opacity: 0.9;
-            line-height: 1.5;
-            margin: 0;
-            max-width: 800px;
-        }
-        
-        .hero-subtitle strong {
+        .highlight {
             color: var(--coral-primary);
-            font-weight: 600;
-        }
-        
-        .hero-video-container {
-            width: 100%;
-            max-width: 1000px;
-            margin: 60px auto 60px;
-            border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-        
-        .hero-video-container:hover {
-            transform: translateY(-5px);
-        }
-        
-        .hero-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-        
-        .hero-cta {
-            text-align: center;
-        }
-        
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            opacity: 0.6;
-            z-index: 10;
-        }
-        
-        .scroll-mouse {
-            width: 24px;
-            height: 40px;
-            border: 2px solid var(--coral-primary);
-            border-radius: 12px;
-            position: relative;
-        }
-        
-        .scroll-wheel {
-            width: 4px;
-            height: 8px;
-            background: var(--coral-primary);
-            border-radius: 2px;
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: scrollWheel 2s ease-in-out infinite;
-        }
-        
-        @keyframes scrollWheel {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0);
-                opacity: 1;
-            }
-            50% {
-                transform: translateX(-50%) translateY(12px);
-                opacity: 0.3;
-            }
-        }
-        
-        .scroll-text {
-            font-size: 0.85rem;
-            color: var(--coral-primary);
-            font-weight: 500;
         }
     </style>
     
@@ -230,82 +298,485 @@
         fbq('init', 'YOUR_PIXEL_ID');
         fbq('track', 'PageView');
     </script>
+
+<style>
+/* DOBRA 2 - VERSÃO CORRIGIDA E SIMPLIFICADA */
+.autoridade-section {
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.6), rgba(248, 245, 240, 0.7)), 
+        url('assets/images/hero-background.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding: 100px 0;
+    position: relative;
+}
+
+/* FORÇAR VISIBILIDADE DAS IMAGENS */
+.foto-item-large {
+    display: flex !important;
+    flex-direction: column !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    transition: transform 0.3s ease;
+}
+
+.foto-item-large img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.foto-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 4/5;
+    margin-bottom: 20px;
+    background: #f0f0f0;
+    position: relative;
+}
+
+/* REMOVER OVERLAYS */
+.foto-container::before,
+.foto-container::after {
+    display: none !important;
+}
+
+/* HOVER EFFECT */
+.foto-item-large:hover {
+    transform: translateY(-8px);
+}
+
+.foto-container:hover {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* TÍTULO ESCURO */
+.autoridade-title {
+    color: #453D39 !important;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+    font-weight: 800;
+}
+
+.autoridade-section .highlight {
+    color: #E25042 !important;
+}
+
+/* DESCRIÇÕES LEGÍVEIS */
+.autoridade-section .foto-description {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 18px 12px;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.autoridade-section .foto-description h3 {
+    color: #E25042;
+    margin-bottom: 8px;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    font-weight: 700;
+}
+
+.autoridade-section .foto-description p {
+    color: #453D39;
+    opacity: 0.85;
+    margin: 0;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.5;
+}
+
+/* GRID LAYOUT */
+.autoridade-section .fotos-grid-large {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ANIMAÇÃO DE ENTRADA SIMPLES */
+.foto-item-large {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.foto-item-large:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.foto-item-large:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.foto-item-large:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+    .autoridade-section {
+        background-attachment: scroll;
+    }
+    
+    .autoridade-section .fotos-grid-large {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .autoridade-section {
+        padding: 80px 0;
+    }
+    
+    .autoridade-section .fotos-grid-large {
+        gap: 30px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .autoridade-section .fotos-grid-large {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 16px;
+    }
+}
+</style>
+
+<!-- JAVASCRIPT SIMPLES PARA PARALLAX -->
+<script>
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector('.autoridade-section');
+    
+    if (parallax) {
+        const speed = scrolled * 0.5;
+        parallax.style.backgroundPosition = `center ${speed}px`;
+    }
+});
+</script>
+
+</style>
+
+<style>
+/* DOBRA 3 - CORREÇÃO DA IMAGEM ESCONDIDA */
+.biografia-section .biografia-image {
+    position: relative !important;
+    z-index: 10 !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15) !important;
+    background: none !important;
+}
+
+.biografia-section .biografia-image img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 20 !important;
+}
+
+/* REMOVER QUALQUER OVERLAY QUE ESTEJA COBRINDO */
+.biografia-section .biografia-image::before,
+.biografia-section .biografia-image::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* GARANTIR QUE O CONTAINER NÃO TENHA BACKGROUND CINZA */
+.biografia-section .biografia-content {
+    background: none !important;
+}
+
+/* LAYOUT SPLIT CORRETO */
+.biografia-section .biografia-content {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 80px !important;
+    align-items: center !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+/* HOVER EFFECT NA IMAGEM */
+.biografia-section .biografia-image:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.2) !important;
+}
+
+.biografia-section .biografia-image:hover img {
+    transform: scale(1.05) !important;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+    .biografia-section .biografia-content {
+        grid-template-columns: 1fr !important;
+        gap: 60px !important;
+    }
+}
+</style>
+
+<style>
+/* DOBRA 4 - VERSÃO CORRIGIDA E SIMPLIFICADA */
+.comunidade-section {
+    background: white !important;
+    padding: 120px 0 !important;
+    position: relative !important;
+}
+
+.comunidade-header {
+    text-align: center !important;
+    margin-bottom: 80px !important;
+    padding: 0 20px !important;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3.5rem) !important;
+    font-weight: 800 !important;
+    color: #453D39 !important;
+    line-height: 1.2 !important;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+/* GRID ESTÁVEL */
+.comunidade-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 40px !important;
+    margin: 0 auto !important;
+    max-width: 1400px !important;
+    padding: 0 40px !important;
+}
+
+/* CARDS VISÍVEIS COM ANIMAÇÃO SUAVE */
+.comunidade-item {
+    position: relative !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
+    aspect-ratio: 4/3 !important;
+    cursor: pointer !important;
+    background: #f5f5f5 !important;
+    opacity: 0 !important;
+    transform: translateY(50px) scale(0.9) !important;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* ANIMAÇÃO DE ENTRADA MAIS SUAVE */
+.comunidade-item.visible {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+/* DELAYS PARA ENTRADA SEQUENCIAL */
+.comunidade-item:nth-child(1) { transition-delay: 0.1s !important; }
+.comunidade-item:nth-child(2) { transition-delay: 0.2s !important; }
+.comunidade-item:nth-child(3) { transition-delay: 0.3s !important; }
+.comunidade-item:nth-child(4) { transition-delay: 0.4s !important; }
+.comunidade-item:nth-child(5) { transition-delay: 0.5s !important; }
+.comunidade-item:nth-child(6) { transition-delay: 0.6s !important; }
+
+/* IMAGENS GARANTIDAMENTE VISÍVEIS */
+.comunidade-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: transform 0.4s ease !important;
+}
+
+/* HOVER EFFECTS ELEGANTES */
+.comunidade-item:hover {
+    transform: translateY(-12px) scale(1.03) !important;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.2) !important;
+}
+
+.comunidade-item:hover img {
+    transform: scale(1.08) !important;
+}
+
+/* EFEITO SHIMMER SUTIL */
+.comunidade-item::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent) !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+    transition: left 0.8s ease !important;
+}
+
+.comunidade-item:hover::before {
+    left: 100% !important;
+}
+
+/* HIGHLIGHT */
+.comunidade-section .highlight {
+    color: #E25042 !important;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+    .comunidade-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+        padding: 0 30px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .comunidade-section {
+        padding: 80px 0 !important;
+    }
+    
+    .comunidade-grid {
+        gap: 25px !important;
+        padding: 0 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .comunidade-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding: 0 16px !important;
+    }
+}
+</style>
+
+<!-- JAVASCRIPT SIMPLIFICADO -->
+<script>
+// Intersection Observer simples e funcional
+const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Aplicar quando DOM carregar
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.comunidade-item');
+    items.forEach(item => {
+        observer.observe(item);
+    });
+});
+</script>
 </head>
 
-<body>
-    <!-- DOBRA 1 - HERO -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
+<a href="https://wa.me/5511999999999?text=Olá! Tenho interesse em conhecer o Método B3D de Harmonização Orofacial" 
+   class="btn-fixo-bottom" 
+   target="_blank"
+   onclick="trackCTA('button_fixo')">
+    QUERO DOMINAR O MÉTODO B3D
+</a>
+
+</body>   
+
+<!-- DOBRA 1 - HERO COM VÍDEO BACKGROUND -->
+<section class="hero" id="hero">
+    <video class="hero-video-background" autoplay muted loop playsinline preload="metadata">
+        <source src="assets/videos/hero-video.mp4" type="video/mp4">
+    </video>
+    
+    <div class="hero-content">
+        <div class="hero-text">
             <h1 class="hero-title">
-                O futuro da <span class="title-gradient">Harmonização Orofacial</span> está em mãos qualificadas
+                Domine a <span class="title-gradient">Harmonização Orofacial</span><br>
+                de excelência mundial
             </h1>
             <p class="hero-subtitle">
-                Transforme sua prática com conhecimento de excelência através do <strong>Método B3D</strong> reconhecido internacionalmente
+                Aprenda o <strong>Método B3D</strong> reconhecido em Harvard e Sorbonne
             </p>
             
-            <div class="hero-video-container">
-                <video class="hero-video" autoplay muted loop playsinline preload="metadata" 
-                       poster="assets/images/hero-background.jpeg">
-                    <source src="assets/videos/hero-video.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeo.
-                </video>
+            <div class="hero-cta">
+                <a href="#" class="btn-premium">QUERO DOMINAR O MÉTODO B3D</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- DOBRA 2 - AUTORIDADE -->
+    <!-- DOBRA 2 - AUTORIDADE COM IMAGEM BACKGROUND -->
+<section id="autoridade" class="autoridade-section">
+    <div class="container">
+        <div class="autoridade-header">
+            <h2 class="autoridade-title">
+                Aprenda com quem ensina o mundo: a <span class="highlight">Dra. Andressa Ballarin</span> é referência e escolha dos profissionais em <span class="highlight">Harmonização Orofacial</span>
+            </h2>
+        </div>
+
+        <div class="fotos-grid-large">
+            <div class="foto-item-large fade-in-up">
+                <div class="foto-container">
+                    <img src="assets/images/Segunda dobra 1.jpeg" alt="Dra. Andressa Ballarin ensinando" loading="lazy" decoding="async">
+                </div>
+                <div class="foto-description">
+                    <h3>Educadora Mundial</h3>
+                    <p>Formando profissionais de excelência em congressos internacionais</p>
+                </div>
             </div>
             
-            <a href="#biografia" class="btn-premium" onclick="trackCTA('hero')">
-                QUERO DOMINAR O MÉTODO B3D
-            </a>
-        </div>
-    </section>
-
-    <!-- DOBRA 2 - AUTORIDADE -->
-    <section id="autoridade" class="autoridade-section">
-        <div class="container">
-            <div class="autoridade-header">
-                <h2 class="autoridade-title">
-                    Aprenda com quem ensina o mundo: a <span class="highlight">Dra. Andressa Ballarin</span> é referência e escolha dos profissionais em <span class="highlight">Harmonização Orofacial</span>
-                </h2>
+            <div class="foto-item-large fade-in-up">
+                <div class="foto-container">
+                    <img src="assets/images/Segunda dobra 3.jpeg" alt="Dra. Andressa Ballarin reconhecimento" loading="lazy" decoding="async">
+                </div>
+                <div class="foto-description">
+                    <h3>Reconhecimento</h3>
+                    <p>Premiada por sua contribuição científica</p>
+                </div>
             </div>
-
-            <div class="fotos-grid-large">
-                <div class="foto-item-large">
-                    <div class="foto-container">
-                        <img src="assets/images/Segunda dobra 1.jpeg" alt="Dra. Andressa Ballarin ensinando" loading="lazy" decoding="async">
-                    </div>
-                    <div class="foto-description">
-                        <h3>Educadora Mundial</h3>
-                        <p>Formando profissionais de excelência em congressos internacionais</p>
-                    </div>
+            
+            <div class="foto-item-large fade-in-up">
+                <div class="foto-container">
+                    <img src="assets/images/Segunda dobra 4.jpeg" alt="Dra. Andressa Ballarin inovação" loading="lazy" decoding="async">
                 </div>
-                <div class="foto-item-large">
-                    <div class="foto-container">
-                        <img src="assets/images/Segunda dobra 2.jpeg" alt="Dra. Andressa Ballarin em procedimento" loading="lazy" decoding="async">
-                    </div>
-                    <div class="foto-description">
-                        <h3>Prática Clínica</h3>
-                        <p>Aplicação precisa do Método B3D</p>
-                    </div>
-                </div>
-                <div class="foto-item-large">
-                    <div class="foto-container">
-                        <img src="assets/images/Segunda dobra 3.jpeg" alt="Dra. Andressa Ballarin reconhecimento" loading="lazy" decoding="async">
-                    </div>
-                    <div class="foto-description">
-                        <h3>Reconhecimento</h3>
-                        <p>Premiada por sua contribuição científica</p>
-                    </div>
-                </div>
-                <div class="foto-item-large">
-                    <div class="foto-container">
-                        <img src="assets/images/Segunda dobra 4.jpeg" alt="Dra. Andressa Ballarin inovação" loading="lazy" decoding="async">
-                    </div>
-                    <div class="foto-description">
-                        <h3>Inovação</h3>
-                        <p>Desenvolvendo o futuro da harmonização</p>
-                    </div>
+                <div class="foto-description">
+                    <h3>Inovação</h3>
+                    <p>Desenvolvendo o futuro da harmonização</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- DOBRA 3 - BIOGRAFIA -->
     <section id="biografia" class="biografia-section">
@@ -328,6 +799,12 @@
                         <p class="quote-destacada">"A técnica Ballarin 3D eleva a qualificação do profissional injetor e entrega de um resultado natural e transformador para cada paciente"</p>
                         
                         <p class="autor-quote"><strong>Dra. Andressa Ballarin</strong></p>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <button class="btn-secondary" onclick="openModal()">
+                            CONHECER O MÉTODO
+                        </button>
                     </div>
                 </div>
             </div>
@@ -389,676 +866,56 @@
                 </div>
                 
                 <div class="cta-final-button">
-                    <a href="#inscricao" class="btn-premium" onclick="trackCTA('final_cta')">
+                    <button class="btn-premium" onclick="openModal()">
                         QUERO SER B3D
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CSS das Novas Dobras -->
-    <style>
-        /* DOBRA 2 - AUTORIDADE */
-        .autoridade-section {
-            background: white;
-            padding: 100px 0;
-        }
-        
-        .autoridade-header {
-            text-align: center;
-            margin-bottom: 80px;
-            padding: 0 20px;
-        }
-        
-        .autoridade-title {
-            font-size: clamp(1.6rem, 3vw, 2.5rem);
-            font-weight: 700;
-            color: var(--chocolate-dark);
-            line-height: 1.3;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 800;
-            color: var(--chocolate-dark);
-            line-height: 1.2;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .btn-premium {
-            background: linear-gradient(135deg, var(--coral-primary) 0%, #f26b5b 100%);
-            color: white;
-            padding: 24px 60px;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(226, 80, 66, 0.3);
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-            font-family: inherit;
-            outline: none;
-        }
-        
-        .btn-premium:hover {
-            background: linear-gradient(135deg, var(--coral-hover) 0%, #ff6b5a 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(226, 80, 66, 0.4);
-            color: white;
-            text-decoration: none;
-        }
-        
-        .btn-premium:visited,
-        .btn-premium:link,
-        .btn-premium:active,
-        .btn-premium:focus {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .highlight {
-            color: var(--coral-primary);
-        }
-        
-        .tag-destaque {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--coral-primary), #f26b5b);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(226, 80, 66, 0.3);
-        }
-        
-        .fotos-grid-large {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 50px;
-            margin: 0 auto;
-            max-width: 1800px;
-            width: 100%;
-            justify-content: center;
-            padding: 0 40px;
-        }
-        
-        .foto-item-large {
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-        }
-        
-        .foto-item-large:hover {
-            transform: translateY(-10px);
-        }
-        
-        .foto-container {
-            position: relative;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
-            aspect-ratio: 3/4;
-            margin-bottom: 25px;
-            width: 100%;
-            min-height: 400px;
-        }
-        
-        .foto-item-large img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .foto-description {
-            text-align: center;
-            background: transparent;
-            padding: 0;
-        }
-        
-        .foto-description h3 {
-            color: var(--coral-primary);
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-        
-        .foto-description p {
-            color: var(--chocolate-dark);
-            opacity: 0.85;
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin: 0;
-            max-width: 280px;
-            margin: 0 auto;
-        }
-        
-        /* DOBRA 3 - BIOGRAFIA */
-        .biografia-section {
-            background: var(--off-white-luxury);
-            padding: 80px 0;
-        }
-        
-        .biografia-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .section-title-biografia {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 800;
-            color: var(--chocolate-dark);
-            line-height: 1.2;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-        
-        .biografia-content-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--chocolate-dark);
-        }
-        
-        .biografia-content-text p {
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-        
-        .biografia-content-text strong {
-            color: var(--coral-primary);
-            font-weight: 700;
-        }
-        
-        .quote-destacada {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--coral-primary);
-            font-weight: 600;
-            margin: 30px 0 15px 0;
-            padding: 20px;
-            background: rgba(226, 80, 66, 0.05);
-            border-left: 4px solid var(--coral-primary);
-            border-radius: 8px;
-        }
-        
-        .autor-quote {
-            text-align: right;
-            font-size: 1rem;
-            margin-bottom: 0;
-            opacity: 1 !important;
-        }
-        
-        .autor-quote strong {
-            color: var(--chocolate-dark);
-        }
-        
-        .biografia-image {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        
-        .biografia-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .certificacoes-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-        
-        .cert-item {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            aspect-ratio: 1;
-        }
-        
-        .cert-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .cert-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* DOBRA 4 - COMUNIDADE */
-        .comunidade-section {
-            background: white;
-            padding: 100px 0;
-        }
-        
-        .comunidade-header {
-            text-align: center;
-            margin-bottom: 80px;
-            padding: 0 20px;
-        }
-        
-        .comunidade-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin: 0 auto;
-            max-width: 1500px;
-            padding: 0 40px;
-        }
-        
-        .comunidade-item {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-            aspect-ratio: 4/3;
-        }
-        
-        .comunidade-item:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
-        
-        .comunidade-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* DOBRA 5 - CTA FINAL */
-        .cta-final-section {
-            background: linear-gradient(135deg, var(--coral-primary) 0%, #f26b5b 100%);
-            padding: 100px 0;
-            color: white;
-            text-align: center;
-        }
-        
-        .cta-final-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .cta-final-title {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 800;
-            color: white;
-            line-height: 1.2;
-            margin-bottom: 60px;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-final-title .highlight {
-            color: white;
-        }
-        
-        .cta-video-container {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto 60px;
-            border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-        
-        .cta-video-container:hover {
-            transform: translateY(-5px);
-        }
-        
-        .cta-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 20px;
-        }
-        
-        .cta-final-button {
-            text-align: center;
-        }
-        
-        /* RESPONSIVIDADE */
-        @media (max-width: 1024px) {
-            .hero {
-                background-attachment: scroll;
-            }
-            
-            .fotos-grid-large {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-                max-width: 1000px;
-                padding: 0 30px;
-            }
-            
-            .foto-container {
-                min-height: 350px;
-            }
-            
-            .comunidade-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-                padding: 0 30px;
-            }
-            
-            .certificacoes-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .biografia-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .section-title-biografia {
-                text-align: center;
-                margin-bottom: 30px;
-            }
-            
-            .cta-final-section {
-                padding: 80px 0;
-            }
-            
-            .cta-final-title {
-                margin-bottom: 50px;
-            }
-            
-            .cta-video-container {
-                margin-bottom: 50px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero {
-                padding: 60px 20px;
-                background-attachment: scroll;
-            }
-            
-            .hero-title {
-                font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-                margin-bottom: 30px;
-            }
-            
-            .hero-subtitle {
-                font-size: clamp(1rem, 2vw, 1.2rem);
-            }
-            
-            .hero-text {
-                margin-bottom: 30px;
-            }
-            
-            .btn-premium {
-                padding: 20px 40px;
-                font-size: 1.1rem;
-            }
-            
-            .hero-video-container {
-                margin: 40px auto 40px;
-            }
-            
-            .fotos-grid-large {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-                max-width: 700px;
-                padding: 0 25px;
-            }
-            
-            .foto-container {
-                min-height: 300px;
-            }
-            
-            .foto-description h3 {
-                font-size: 1.3rem;
-            }
-            
-            .foto-description p {
-                font-size: 1rem;
-            }
-            
-            .comunidade-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-                padding: 0 25px;
-            }
-            
-            .biografia-content-text {
-                font-size: 1rem;
-            }
-            
-            .quote-destacada {
-                font-size: 1.1rem;
-                padding: 15px;
-            }
-            
-            .cta-final-section {
-                padding: 60px 0;
-            }
-            
-            .cta-final-title {
-                margin-bottom: 40px;
-            }
-            
-            .cta-video-container {
-                margin-bottom: 40px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: clamp(1.6rem, 3vw, 2.4rem);
-                line-height: 1.2;
-                margin-bottom: 25px;
-            }
-            
-            .hero-subtitle {
-                font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-            }
-            
-            .hero-text {
-                margin-bottom: 25px;
-            }
-            
-            .btn-premium {
-                padding: 18px 30px;
-                font-size: 1rem;
-            }
-            
-            .hero-video-container {
-                margin: 30px auto 30px;
-            }
-            
-            .fotos-grid-large {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                max-width: 500px;
-                padding: 0 20px;
-            }
-            
-            .foto-container {
-                min-height: 400px;
-            }
-            
-            .foto-description h3 {
-                font-size: 1.4rem;
-            }
-            
-            .foto-description p {
-                font-size: 1.1rem;
-            }
-            
-            .comunidade-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 0 20px;
-            }
-            
-            .certificacoes-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .biografia-content-text {
-                font-size: 0.95rem;
-            }
-            
-            .quote-destacada {
-                font-size: 1rem;
-                padding: 12px;
-            }
-            
-            .cta-final-title {
-                font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-            }
-        }
-    </style>
-
     <!-- JavaScript Otimizado -->
+    <script src="js/main.js"></script>
+    
+    <!-- Funções Essenciais Inline -->
     <script>
-        // Performance: Lazy Loading Avançado
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.remove('lazy');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            // Aplicar aos elementos fora da dobra 1
-            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // Conversion Tracking Avançado
+        // Tracking simplificado
         function trackCTA(location) {
             // Google Analytics 4
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'cta_click', {
                     'location': location,
-                    'event_category': 'conversion',
-                    'custom_parameter': window.location.pathname
+                    'event_category': 'conversion'
                 });
             }
             
             // Facebook Pixel
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead', {
-                    content_name: location,
-                    content_category: 'cta_click'
+                    content_name: location
                 });
             }
             
-            // Console para debug
-            console.log('CTA Tracking:', {
-                location: location,
-                timestamp: new Date().toISOString(),
-                page: window.location.pathname
-            });
+            console.log('CTA clicked:', location);
         }
 
-        // Video Performance
+        // Modal placeholder (será sobrescrito pelo main.js)
+        function openModal() {
+            trackCTA('modal_open');
+            
+            // Fallback para WhatsApp
+            const whatsappUrl = "https://wa.me/5511999999999?text=Olá! Tenho interesse em conhecer o Método B3D de Harmonização Orofacial";
+            window.open(whatsappUrl, '_blank');
+            
+            console.log('Modal placeholder - redirecionando para WhatsApp');
+        }
+
+        // Performance crítica
         document.addEventListener('DOMContentLoaded', function() {
-            const heroVideo = document.querySelector('.hero-video');
-            const ctaVideo = document.querySelector('.cta-video');
+            // Track page load
+            trackCTA('page_load');
             
-            // Hero Video
-            if (heroVideo) {
-                heroVideo.play().catch(error => {
-                    console.log('Hero video autoplay prevented:', error);
-                });
-                
-                // Pause video when out of view para performance
-                const heroVideoObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            heroVideo.play();
-                        } else {
-                            heroVideo.pause();
-                        }
-                    });
-                });
-                heroVideoObserver.observe(heroVideo);
-            }
-            
-            // CTA Video
-            if (ctaVideo) {
-                ctaVideo.play().catch(error => {
-                    console.log('CTA video autoplay prevented:', error);
-                });
-                
-                // Pause video when out of view para performance
-                const ctaVideoObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            ctaVideo.play();
-                        } else {
-                            ctaVideo.pause();
-                        }
-                    });
-                });
-                ctaVideoObserver.observe(ctaVideo);
-            }
-        });
-
-        // Smooth Scroll Otimizado
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Analytics de Scroll Depth
-        let scrollDepths = [25, 50, 75, 100];
-        let trackedDepths = [];
-
-        window.addEventListener('scroll', function() {
-            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-            
-            scrollDepths.forEach(depth => {
-                if (scrollPercent >= depth && !trackedDepths.includes(depth)) {
-                    trackedDepths.push(depth);
-                    
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'scroll', {
-                            'event_category': 'engagement',
-                            'event_label': `${depth}% scrolled`,
-                            'non_interaction': true
-                        });
-                    }
-                }
-            });
+            console.log('Landing Page B3D Refatorada carregada com sucesso!');
         });
     </script>
 </body>

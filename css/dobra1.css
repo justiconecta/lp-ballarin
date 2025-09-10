@@ -1,55 +1,73 @@
 /* ======================
-   DOBRA1.CSS - OVERLAY DIRETO
+   DOBRA1.CSS - VÍDEO BACKGROUND SOLUÇÃO FINAL
    ====================== */
 
-/* HERO SECTION COM OVERLAY DIRETO NO BACKGROUND */
+/* RESET FORÇADO - Hero com vídeo background */
 section#hero.hero {
+    position: relative;
     min-height: 100vh;
-    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 80px 20px;
-    
-    /* OVERLAY DIRETO NO BACKGROUND - MAIS CONFIÁVEL */
-    background: 
-        linear-gradient(rgba(248, 245, 240, 0.75), rgba(248, 245, 240, 0.75)),
-        url('../assets/images/hero-background.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    justify-content: center;
+    overflow: hidden;
+    padding: 80px 0;
+    background: none;
+    background-image: none;
+    background-attachment: initial;
+    grid-template-columns: none;
 }
 
-/* REMOVIDO: ::before - usando método direto acima */
-
-/* Container principal */
-section#hero.hero .hero-content {
-    max-width: 1200px;
+/* Vídeo background */
+section#hero.hero .hero-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin: 0 auto;
-    position: relative;
-    z-index: 5;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
 
-/* Textos principais */
+/* Overlay para contraste */
+section#hero.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(69, 61, 57, 0.6), rgba(69, 61, 57, 0.4));
+    z-index: 2;
+}
+
+/* Container principal centralizado */
+section#hero.hero .hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 1000px;
+    padding: 0 40px;
+    width: 100%;
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+}
+
+/* Texto principal */
 section#hero.hero .hero-text {
-    margin-bottom: 60px;
-    max-width: 950px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 section#hero.hero .hero-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: white;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
     font-weight: 800;
-    color: #453D39;
-    margin-bottom: 30px;
     line-height: 1.1;
-    letter-spacing: -1px;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
 section#hero.hero .title-gradient {
@@ -57,141 +75,92 @@ section#hero.hero .title-gradient {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    text-shadow: none;
 }
 
 section#hero.hero .hero-subtitle {
-    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    color: white;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     font-weight: 400;
-    color: #453D39;
-    opacity: 0.9;
-    line-height: 1.5;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    opacity: 0.95;
 }
 
 section#hero.hero .hero-subtitle strong {
-    font-weight: 600;
     color: #E25042;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Vídeo limpo */
+/* Esconder vídeo container antigo */
 section#hero.hero .hero-video-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto 60px;
-    border-radius: 20px;
-    overflow: hidden;
-    aspect-ratio: 16/9;
-    position: relative;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-}
-
-section#hero.hero .hero-video-container:hover {
-    transform: translateY(-5px);
+    display: none;
 }
 
 section#hero.hero .hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 20px;
+    display: none;
 }
 
-/* BOTÃO COM ESTILO INLINE PARA GARANTIR */
-section#hero.hero .hero-cta .btn-premium {
-    background: linear-gradient(135deg, #E25042 0%, #f26b5b 100%) !important;
-    color: white !important;
-    padding: 24px 60px !important;
-    border: none !important;
-    border-radius: 15px !important;
-    font-size: 1.2rem !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 10px 30px rgba(226, 80, 66, 0.3) !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    position: relative !important;
-    overflow: hidden !important;
-    font-family: inherit !important;
-    outline: none !important;
+/* CTA */
+section#hero.hero .hero-cta {
+    margin-top: 40px;
+    text-align: center;
 }
 
-section#hero.hero .hero-cta .btn-premium:hover {
-    background: linear-gradient(135deg, #e45346 0%, #ff6b5a 100%) !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 15px 40px rgba(226, 80, 66, 0.4) !important;
-    color: white !important;
-    text-decoration: none !important;
+section#hero.hero .btn-premium {
+    background: linear-gradient(135deg, #E25042 0%, #f26b5b 100%);
+    color: white;
+    padding: 24px 60px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(226, 80, 66, 0.3);
+    text-decoration: none;
+    display: inline-block;
+    min-width: 280px;
+    text-align: center;
 }
 
-section#hero.hero .hero-cta .btn-premium:visited,
-section#hero.hero .hero-cta .btn-premium:link,
-section#hero.hero .hero-cta .btn-premium:active,
-section#hero.hero .hero-cta .btn-premium:focus {
-    color: white !important;
-    text-decoration: none !important;
+section#hero.hero .btn-premium:hover {
+    background: linear-gradient(135deg, #e45346 0%, #ff6b5a 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(226, 80, 66, 0.4);
+    color: white;
+    text-decoration: none;
 }
 
-/* Indicador de scroll */
-section#hero.hero .scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    opacity: 0.6;
-    z-index: 10;
-}
-
-section#hero.hero .scroll-mouse {
-    width: 24px;
-    height: 40px;
-    border: 2px solid #E25042;
-    border-radius: 12px;
-    position: relative;
-}
-
-section#hero.hero .scroll-wheel {
-    width: 4px;
-    height: 8px;
-    background: #E25042;
-    border-radius: 2px;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scrollWheel 2s ease-in-out infinite;
-}
-
-@keyframes scrollWheel {
-    0%, 100% {
-        transform: translateX(-50%) translateY(0);
-        opacity: 1;
-    }
-    50% {
-        transform: translateX(-50%) translateY(12px);
-        opacity: 0.3;
-    }
-}
-
-section#hero.hero .scroll-text {
-    font-size: 0.85rem;
-    color: #E25042;
-    font-weight: 500;
+section#hero.hero .btn-premium:visited,
+section#hero.hero .btn-premium:link,
+section#hero.hero .btn-premium:active,
+section#hero.hero .btn-premium:focus {
+    color: white;
+    text-decoration: none;
 }
 
 /* Animações */
+section#hero.hero .hero-text {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+section#hero.hero .hero-cta {
+    animation: fadeInUp 0.8s ease 0.3s both;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -199,30 +168,25 @@ section#hero.hero .scroll-text {
     }
 }
 
-section#hero.hero .hero-text,
-section#hero.hero .hero-video-container,
-section#hero.hero .hero-cta {
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-section#hero.hero .hero-video-container {
-    animation-delay: 0.3s;
-}
-
-section#hero.hero .hero-cta {
-    animation-delay: 0.6s;
-}
-
 /* Responsivo */
 @media (max-width: 1024px) {
-    section#hero.hero {
-        background-attachment: scroll;
+    section#hero.hero .hero-content {
+        padding: 0 30px;
+    }
+    
+    section#hero.hero::before {
+        background: linear-gradient(rgba(69, 61, 57, 0.7), rgba(69, 61, 57, 0.5));
     }
 }
 
 @media (max-width: 768px) {
     section#hero.hero {
-        padding: 60px 20px;
+        padding: 60px 0;
+        min-height: 90vh;
+    }
+    
+    section#hero.hero .hero-content {
+        padding: 0 20px;
     }
     
     section#hero.hero .hero-title {
@@ -232,23 +196,25 @@ section#hero.hero .hero-cta {
     
     section#hero.hero .hero-subtitle {
         font-size: clamp(1rem, 2vw, 1.2rem);
+        margin-bottom: 30px;
     }
     
-    section#hero.hero .hero-text {
-        margin-bottom: 40px;
+    section#hero.hero .btn-premium {
+        padding: 20px 40px;
+        font-size: 1.1rem;
+        min-width: 240px;
     }
     
-    section#hero.hero .hero-cta .btn-premium {
-        padding: 20px 40px !important;
-        font-size: 1.1rem !important;
-    }
-    
-    section#hero.hero .hero-video-container {
-        margin-bottom: 40px;
+    section#hero.hero::before {
+        background: linear-gradient(rgba(69, 61, 57, 0.75), rgba(69, 61, 57, 0.6));
     }
 }
 
 @media (max-width: 480px) {
+    section#hero.hero .hero-content {
+        padding: 0 16px;
+    }
+    
     section#hero.hero .hero-title {
         font-size: clamp(1.6rem, 3vw, 2.4rem);
         line-height: 1.2;
@@ -256,10 +222,27 @@ section#hero.hero .hero-cta {
     
     section#hero.hero .hero-subtitle {
         font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+        margin-bottom: 25px;
     }
     
-    section#hero.hero .hero-cta .btn-premium {
-        padding: 18px 30px !important;
-        font-size: 1rem !important;
+    section#hero.hero .btn-premium {
+        padding: 18px 30px;
+        font-size: 1rem;
+        min-width: 200px;
+    }
+    
+    section#hero.hero::before {
+        background: linear-gradient(rgba(69, 61, 57, 0.8), rgba(69, 61, 57, 0.65));
+    }
+    
+    /* Fallback para mobile sem vídeo */
+    section#hero.hero .hero-video-background {
+        display: none;
+    }
+    
+    section#hero.hero {
+        background: linear-gradient(rgba(69, 61, 57, 0.7), rgba(69, 61, 57, 0.5)), url('../assets/images/hero-background.jpeg');
+        background-size: cover;
+        background-position: center;
     }
 }
